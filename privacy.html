@@ -35,7 +35,7 @@
 <p>VOROM stores the data you create — workout logs, exercise catalog edits, body weight, training-mode settings, plates, and your account email. Nothing else.</p>
 
 <h2>Where your data lives</h2>
-<p>Local: your device's SwiftData store. Cloud: Supabase managed PostgreSQL (Singapore region). Large files (HR samples, GPS routes, distance traces) live in Supabase Storage. All encrypted in transit (TLS) and at rest.</p>
+<p>Local: your device's SwiftData store — holds your complete data regardless of tier. Cloud: Supabase managed PostgreSQL (Singapore region) — stores a full backup of your data regardless of tier, so an upgrade or device change restores everything. Large files (HR samples, GPS routes, distance traces) live in Supabase Storage. Live multi-device synchronization (e.g., iPhone ↔ iPad ↔ second iPhone) requires a paid tier; the free tier still backs up to cloud but does not actively mirror new data across multiple signed-in devices in real time. All data is encrypted in transit (TLS) and at rest.</p>
 
 <h2>HealthKit</h2>
 <p>If you grant Health permission, VOROM reads heart rate, body weight, and (optionally) running power FROM Apple Health for use during workouts and in benchmarks. VOROM does NOT write workout data back to Apple Health unless you explicitly enable export.</p>
@@ -43,11 +43,23 @@
 <h2>What is NOT collected</h2>
 <p>VOROM has no analytics, no ad SDKs, no tracking pixels. There is no third-party data sharing. The app does not request your contacts, calendar, photos, or microphone.</p>
 
+<h2>Third-party services</h2>
+<p>VOROM uses three external services to operate: (1) <strong>Supabase</strong> — hosts your cloud database, authentication tokens, and large files in Singapore. (2) <strong>Apple Sign-In</strong> — authenticates you without ever revealing your password to us; we receive only your email (or relay email if you use "Hide My Email") and a stable identifier. (3) <strong>Google Sign-In</strong> — same authentication model as Apple. We do not see, receive, or store your Apple or Google account password. Each of these providers has its own privacy policy that also applies to data they handle on your behalf.</p>
+
+<h2>International data transfer</h2>
+<p>Your data is processed and stored in Singapore (Supabase's ap-southeast-1 region). If you live in the European Economic Area, the United Kingdom, the United States, or another jurisdiction with data-protection laws, your data is transferred to Singapore for the purposes described in this policy. We rely on Supabase's infrastructure security and standard contractual safeguards to protect your data during this transfer.</p>
+
+<h2>Data retention</h2>
+<p>Your workout and account data is retained indefinitely for as long as your account is active, regardless of whether you are on the free tier or a paid tier. We do not delete free-tier data — this lets you upgrade later and immediately see your full history. If you delete your account, all your data is permanently removed after the 24-hour grace period (see Account deletion below). If your account is inactive for an extended period and we discontinue the service, we will email you before deleting any data.</p>
+
 <h2>Account deletion</h2>
 <p>Settings → Account → Delete My Account soft-deletes every row across 8 tables for your user. A 24-hour grace period lets you recover by signing back in. After 24 hours, the data is permanently removed.</p>
 
 <h2>Export</h2>
-<p>Settings → Account → Export My Data generates a complete JSON + CSV snapshot of everything we have on you. You own your data.</p>
+<p>Settings → Account → Export My Data generates a complete JSON + CSV snapshot of everything we have on you. <strong>Important note for free-tier users:</strong> even if the in-app UI restricts viewing to your most recent 3 months, the Export feature includes your FULL unrestricted historical data. You own your data and have the right to download all of it at any time.</p>
+
+<h2>Your rights (GDPR / CCPA / similar laws)</h2>
+<p>If you live in the European Economic Area, the United Kingdom, California, or any jurisdiction with similar data-protection laws, you have the right to: access your data, correct inaccurate data, port it to another service, erase it, restrict or object to its processing, and lodge a complaint with your local data-protection authority. VOROM's Export My Data feature gives you a full copy of your data on demand; the Delete My Account feature permanently erases it after a 24-hour grace period. These features satisfy the corresponding access, portability, and erasure rights under GDPR, the UK GDPR, and CCPA. For any other request — correction, restriction, objection, or questions — contact <a href="mailto:vorom.yip@gmail.com">vorom.yip@gmail.com</a> and we will respond within 30 days.</p>
 
 <h2>Children</h2>
 <p>VOROM is not directed to children under 13. Sign-up requires Apple / Google / email authentication — those providers enforce their own age policies.</p>
