@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOROM — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 720px;
+    margin: 2em auto;
+    padding: 0 1.25em 6em;
+    line-height: 1.6;
+  }
+  h1 { font-size: 2em; margin-bottom: 0.25em; }
+  h2 { font-size: 1.2em; margin-top: 1.75em; margin-bottom: 0.4em; }
+  .updated { color: #666; font-size: 0.85em; margin-bottom: 2em; }
+  p { margin: 0 0 1em; }
+  a { color: #007aff; }
+  .nav { margin-top: 3em; font-size: 0.9em; color: #666; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1c1c1e; color: #f2f2f7; }
+    .updated, .nav { color: #aaa; }
+    a { color: #0a84ff; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="updated">Last updated: May 2026</p>
+
+<h2>What VOROM collects</h2>
+<p>VOROM stores the data you create — workout logs, exercise catalog edits, body weight, training-mode settings, plates, and your account email. Nothing else.</p>
+
+<h2>Where your data lives</h2>
+<p>Local: your device's SwiftData store. Cloud: Supabase managed PostgreSQL (Singapore region). Large files (HR samples, GPS routes, distance traces) live in Supabase Storage. All encrypted in transit (TLS) and at rest.</p>
+
+<h2>HealthKit</h2>
+<p>If you grant Health permission, VOROM reads heart rate, body weight, and (optionally) running power FROM Apple Health for use during workouts and in benchmarks. VOROM does NOT write workout data back to Apple Health unless you explicitly enable export.</p>
+
+<h2>What is NOT collected</h2>
+<p>VOROM has no analytics, no ad SDKs, no tracking pixels. There is no third-party data sharing. The app does not request your contacts, calendar, photos, or microphone.</p>
+
+<h2>Account deletion</h2>
+<p>Settings → Account → Delete My Account soft-deletes every row across 8 tables for your user. A 24-hour grace period lets you recover by signing back in. After 24 hours, the data is permanently removed.</p>
+
+<h2>Export</h2>
+<p>Settings → Account → Export My Data generates a complete JSON + CSV snapshot of everything we have on you. You own your data.</p>
+
+<h2>Children</h2>
+<p>VOROM is not directed to children under 13. Sign-up requires Apple / Google / email authentication — those providers enforce their own age policies.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the app will show a banner on next launch with a summary and link to the new version. Continued use means acceptance.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy or your data? Email <a href="mailto:victor135791@gmail.com">victor135791@gmail.com</a>.</p>
+
+<p class="nav"><a href="terms.html">Terms of Service</a> · <a href="index.html">VOROM</a></p>
+
+</body>
+</html>
