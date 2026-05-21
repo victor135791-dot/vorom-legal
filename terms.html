@@ -19,10 +19,29 @@
   p { margin: 0 0 1em; }
   a { color: #007aff; }
   .nav { margin-top: 3em; font-size: 0.9em; color: #666; }
+  .medical-warning {
+    border: 2px solid #d32f2f;
+    background-color: #ffebee;
+    padding: 16px 18px;
+    border-radius: 8px;
+    margin: 1.5em 0 2em;
+  }
+  .medical-warning h2 {
+    color: #c62828;
+    margin: 0 0 0.5em;
+  }
+  .medical-warning p {
+    margin: 0;
+  }
   @media (prefers-color-scheme: dark) {
     body { background: #1c1c1e; color: #f2f2f7; }
     .updated, .nav { color: #aaa; }
     a { color: #0a84ff; }
+    .medical-warning {
+      background-color: #2a1010;
+      border-color: #ff5252;
+    }
+    .medical-warning h2 { color: #ff8a80; }
   }
 </style>
 </head>
@@ -30,6 +49,11 @@
 
 <h1>Terms of Service</h1>
 <p class="updated">Last updated: May 2026</p>
+
+<div class="medical-warning">
+  <h2>⚠️ Medical Disclaimer</h2>
+  <p>VOROM provides mathematical estimates for training (e1RM, VO2Max zones, target paces, rest timing). These are <strong>not</strong> medical prescriptions and VOROM is <strong>not</strong> a medical device. <strong>Consult a physician before starting high-intensity training</strong>, and always listen to your body over app-suggested targets. You assume all risk for injury or health complications arising from your use of the app. The full liability framework is set out in the sections below.</p>
+</div>
 
 <h2>Acceptance</h2>
 <p>By installing and using VOROM you agree to these terms. You must be at least 13 years old to use VOROM. If you do not agree to these terms, you may not use the app and must delete it.</p>
@@ -74,7 +98,7 @@
 <p>Your account is tied to the email of your sign-in provider. We may suspend or terminate your account at our sole discretion, with or without notice, for any reason — including but not limited to violation of these terms, suspected fraud or abuse, harm to other users, legal requirement, or our decision to stop providing the service. Termination does not affect rights that have already accrued. If you delete your own account, see the Privacy Policy for the 24-hour grace period. Sections that by their nature survive termination — liability, indemnification, intellectual property, governing law — continue to apply after your account ends.</p>
 
 <h2>Service availability</h2>
-<p>Cloud sync runs on Supabase managed infrastructure (currently single-region in Singapore). We aim for &gt;99% uptime but make no SLA. The app works offline; your data is safe locally even when cloud sync is unavailable.</p>
+<p>Cloud sync runs on Supabase managed infrastructure (currently single-region in US East — North Virginia, <code>us-east-1</code>). We aim for &gt;99% uptime but make no SLA. The app works offline; your data is safe locally even when cloud sync is unavailable.</p>
 
 <h2>Updates</h2>
 <p>We push updates via the App Store. Some updates may change features, data formats, or the look of the app. Older versions may stop syncing if their data model is incompatible — keep the app current.</p>
@@ -112,8 +136,8 @@
 <h2>Free tier limits</h2>
 <p>The free tier of VOROM provides core workout-logging functionality without payment. Free-tier access is subject to the following limits, which may change for new users without notice.</p>
 <ul>
-<li><strong>Historical view:</strong> in-app viewing, charting, and benchmark calculations are restricted to the most recent 3 months (90 days) of your training. Older workouts are <em>not</em> deleted — they remain on your device and in our cloud backup — but the in-app UI does not display them on the free tier. Your full data is always available via Export My Data.</li>
-<li><strong>Custom exercises:</strong> free-tier accounts can create up to 8 custom exercises beyond the built-in catalog.</li>
+<li><strong>Historical view:</strong> the 90-day cap is an <em>in-app UI restriction only</em>. In-app viewing, charting, and benchmark calculations on the free tier are restricted to your most recent 90 days. Older workouts are <strong>not</strong> deleted — they remain in full on your device and in our cloud backup. Your <strong>complete</strong> unrestricted history is always available via Settings → Account → Export My Data, regardless of tier. We will never hold your training history behind a paywall.</li>
+<li><strong>Custom exercises:</strong> free-tier accounts can create up to 10 custom exercises beyond the built-in catalog.</li>
 <li><strong>Training Mode:</strong> Training Mode (Hypertrophy / Strength / Endurance / Deload / Run modes / Bike VO2Max) is a Pro feature. New free-tier accounts may receive a one-time 1-month free trial of Training Mode; after the trial expires, the feature is locked until you upgrade.</li>
 <li><strong>Live multi-device cloud sync:</strong> real-time synchronization across multiple signed-in devices (e.g., iPhone + iPad + second iPhone) is a Pro feature. Free-tier accounts still receive a cloud backup so you can restore on a replacement device, but new workouts on one device do not actively mirror to other signed-in devices in real time.</li>
 <li><strong>Advanced cardio metrics:</strong> Efficiency Factor (EF) and Heart Rate Recovery (HRR) benchmarks are Pro features and are not displayed for free-tier accounts.</li>
