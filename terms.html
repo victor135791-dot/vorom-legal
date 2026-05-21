@@ -19,6 +19,10 @@
   p { margin: 0 0 1em; }
   a { color: #007aff; }
   .nav { margin-top: 3em; font-size: 0.9em; color: #666; }
+  .footer-id { margin-top: 3em; padding-top: 1em; border-top: 1px solid #ddd; font-size: 0.85em; color: #666; }
+  @media (prefers-color-scheme: dark) {
+    .footer-id { border-top-color: #333; color: #aaa; }
+  }
   .medical-warning {
     border: 2px solid #d32f2f;
     background-color: #ffebee;
@@ -47,6 +51,9 @@
 </head>
 <body>
 
+<div style="text-align: center; margin: 0 0 1.5em;">
+  <img src="logo.png" alt="VOROM logo" style="width: 96px; height: auto;">
+</div>
 <h1>Terms of Service</h1>
 <p class="updated">Last updated: May 2026</p>
 
@@ -153,6 +160,8 @@
 
 <h2>Contact</h2>
 <p>Email <a href="mailto:vorom.yip@gmail.com">vorom.yip@gmail.com</a>.</p>
+
+<p class="footer-id">VOROM is developed and operated by Ka Yue Yip, Hong Kong. Cloud infrastructure: US East — North Virginia (<code>us-east-1</code>).</p>
 
 <p class="nav"><a href="privacy.html">Privacy Policy</a> · <a href="index.html">VOROM</a></p>
 
