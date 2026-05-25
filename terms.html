@@ -99,7 +99,19 @@
 <p>VOROM does not show advertisements inside the app and never will. We do not sell, rent, share, or otherwise commercialize your workout data, body weight, heart-rate samples, GPS routes, account email, or any other personal information. Your data is used only to run the features you see — sync across your devices, compute benchmarks, render charts. That's it.</p>
 
 <h2>Data loss disclaimer</h2>
-<p>We take backups seriously: Supabase runs managed daily backups + point-in-time recovery, and every local write is also persisted on-device. Even so, no software can guarantee 100% data integrity forever. Possible causes of loss include but are not limited to: a regional cloud-provider incident, account deletion accidentally confirmed past the 24-hour grace period, hardware failure on your device, OS-level data corruption, force-quit during a migration, or a bug in VOROM itself. We make best-effort defenses and recovery tools (Diagnostics → Restore, Undo Sweep, Re-pull) but cannot accept liability for data loss. Export your data periodically (Settings → Account → Export My Data) if it matters to you.</p>
+<p>We make best-effort defenses (Supabase managed daily backups, point-in-time recovery, on-device persistence for every local write, in-app Diagnostics → Restore / Undo Sweep / Re-pull) but <strong>no software can guarantee 100% data integrity forever</strong>. Possible causes of cloud or local data loss include but are not limited to:</p>
+<ul>
+<li>A regional cloud-provider (Supabase, AWS) incident, outage, or shutdown.</li>
+<li>Permanent discontinuation of VOROM's cloud infrastructure if we cease operations.</li>
+<li>Account deletion accidentally confirmed past the 24-hour grace period.</li>
+<li>Hardware failure, loss, or theft of your device.</li>
+<li>OS-level data corruption, iOS upgrade failure, or factory reset.</li>
+<li>Force-quit during a migration, sync conflict, or background save.</li>
+<li>A bug in VOROM itself, including bugs that go undetected for some time.</li>
+<li>Account-switch wipes triggered by signing into a different VOROM account on the same device.</li>
+<li>Apple In-App Purchase / Supabase Auth state desynchronization causing the app to fail to recognize your tier or account.</li>
+</ul>
+<p><strong>You acknowledge and agree that VOROM cannot accept liability for any data loss — partial or complete, cloud-side or device-side — arising from any cause, including ordinary negligence on our part.</strong> Cloud Backup (Pro feature) is provided on a "best effort" basis and does not constitute a guarantee. If your training data has long-term value to you, <strong>you are solely responsible</strong> for exporting it periodically (Settings → Account → Export My Data) and saving the file to a location outside the app (iCloud Drive, Files, email, another cloud service). VOROM is not a backup service.</p>
 
 <h2>Account, suspension &amp; termination</h2>
 <p>Your account is tied to the email of your sign-in provider. We may suspend or terminate your account at our sole discretion, with or without notice, for any reason — including but not limited to violation of these terms, suspected fraud or abuse, harm to other users, legal requirement, or our decision to stop providing the service. Termination does not affect rights that have already accrued. If you delete your own account, see the Privacy Policy for the 24-hour grace period. Sections that by their nature survive termination — liability, indemnification, intellectual property, governing law — continue to apply after your account ends.</p>
@@ -143,14 +155,15 @@
 <h2>Free tier limits</h2>
 <p>The free tier of VOROM provides core workout-logging functionality without payment. Free-tier access is subject to the following limits, which may change for new users without notice.</p>
 <ul>
-<li><strong>Historical view:</strong> the 90-day cap is an <em>in-app UI restriction only</em>. In-app viewing, charting, and benchmark calculations on the free tier are restricted to your most recent 90 days. Older workouts are <strong>not</strong> deleted — they remain in full on your device and in our cloud backup. Your <strong>complete</strong> unrestricted history is always available via Settings → Account → Export My Data, regardless of tier. We will never hold your training history behind a paywall.</li>
+<li><strong>Cloud Backup:</strong> Cloud sync of workouts, exercises, templates, and HR / GPS data is a Pro feature. Free-tier accounts operate in <strong>On-Device Only mode</strong> — your workout data stays on this device. Your username, email, and tier still sync to our cloud for sign-in identity, but your training history does not. To back up your training data, use Settings → Account → Export My Data, then save the file to iCloud Drive, Files, or email so it survives outside the app.</li>
+<li><strong>Historical view:</strong> all tiers see their <strong>complete unrestricted history</strong> in-app. No date cap on viewing. (Earlier versions of VOROM applied a 90-day cap on the free tier; that cap was removed 2026-05-25.)</li>
 <li><strong>Custom exercises:</strong> free-tier accounts can create up to 10 custom exercises beyond the built-in catalog.</li>
-<li><strong>Training Mode:</strong> Training Mode (Hypertrophy / Strength / Endurance / Deload / Run modes / Bike VO2Max) is a Pro feature. New free-tier accounts may receive a one-time 1-month free trial of Training Mode; after the trial expires, the feature is locked until you upgrade.</li>
-<li><strong>Live multi-device cloud sync:</strong> real-time synchronization across multiple signed-in devices (e.g., iPhone + iPad + second iPhone) is a Pro feature. Free-tier accounts still receive a cloud backup so you can restore on a replacement device, but new workouts on one device do not actively mirror to other signed-in devices in real time.</li>
+<li><strong>Training Mode:</strong> Training Mode (Hypertrophy / Strength / Endurance / Deload / Run modes / Bike VO2Max) is a Pro feature.</li>
 <li><strong>Advanced cardio metrics:</strong> Efficiency Factor (EF) and Heart Rate Recovery (HRR) benchmarks are Pro features and are not displayed for free-tier accounts.</li>
+<li><strong>Pro → Free downgrade:</strong> if you previously subscribed to Pro and your subscription expires, your already-uploaded cloud data is <strong>retained indefinitely</strong>. We never auto-delete your training history. Re-subscribing restores cloud sync access — you pick up where you left off. The only way to permanently remove your cloud data is to use Settings → Account → Delete My Account.</li>
 <li><strong>Fair use:</strong> to keep VOROM sustainable for everyone, we reserve the right to impose reasonable fair-use limits on cloud storage and bandwidth across all tiers, including Lifetime accounts. If a single account consumes server resources far beyond typical use, we may restrict further cloud uploads while leaving your on-device data unaffected.</li>
 </ul>
-<p>To unlock full historical viewing, unlimited custom exercises, Training Mode, live cross-device sync, and advanced cardio metrics, upgrade to VOROM Pro (subscription) or VOROM Lifetime.</p>
+<p>To unlock Cloud Backup, unlimited custom exercises, Training Mode, and advanced cardio metrics, upgrade to VOROM Pro (subscription) or VOROM Lifetime.</p>
 
 <h2>Severability &amp; entire agreement</h2>
 <p>If any part of these terms is held unenforceable, the rest still apply. These terms (together with the Privacy Policy) are the entire agreement between you and VOROM regarding the app; they supersede any prior agreement.</p>
