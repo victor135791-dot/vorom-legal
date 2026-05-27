@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VOROM — Open in App</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      margin: 0;
+      padding: 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 28px;
+      max-width: 480px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    h1 { font-size: 24px; margin: 0 0 12px; }
+    p { font-size: 15px; line-height: 1.5; color: #555; margin: 0 0 16px; }
+    .btn {
+      display: inline-block;
+      background: #0a84ff;
+      color: white !important;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 15px;
+      margin-top: 8px;
+    }
+    .small { font-size: 13px; color: #888; margin-top: 24px; }
+    .alt { color: #0a84ff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Open in VOROM</h1>
+    <p id="msg">If you have VOROM installed, this link should have opened the app. Tap below to install or open it.</p>
+    <a class="btn" href="https://apps.apple.com/app/vorom" id="store">Install VOROM</a>
+    <p class="small">VOROM is a workout-tracking app for iPhone &amp; Apple Watch. Template share links work only on devices with VOROM installed.</p>
+    <p class="small"><a class="alt" href="/">vorom.app home</a></p>
+  </div>
+  <script>
+    // If the URL path is /share/v1/<encoded>, attempt a deep link as a
+    // last-resort fallback. (Universal links open the app BEFORE this
+    // page loads if AASA is set up correctly — this script only runs
+    // when the user landed in the browser because the app isn't
+    // installed or AASA hasn't been re-fetched.)
+    var p = location.pathname;
+    if (p.indexOf("/share/v1/") === 0) {
+      document.getElementById("msg").textContent =
+        "This is a VOROM template-share link. Install VOROM to open it.";
+    }
+  </script>
+</body>
+</html>
