@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["NJHK9N2MS6.com.victoryip.vorom"],
+        "components": [
+          {
+            "/": "/share/v1/*",
+            "comment": "Offline template share links open in the VOROM app"
+          }
+        ]
+      }
+    ]
+  }
+}
