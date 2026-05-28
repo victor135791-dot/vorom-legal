@@ -88,6 +88,21 @@
 <li>Only the people you send the link to can decode and import the template.</li>
 <li>VOROM has no record, log, or copy of shares performed via this feature.</li>
 </ul>
+
+<h2>Template reports and content blocks</h2>
+<p>When a recipient taps "Report this template" in the import preview, the following is sent <strong>anonymously</strong> to a private admin-only review queue (`template_reports`) on our Supabase backend:</p>
+<ul>
+<li>The full decoded template content (name, exercises, sets, notes).</li>
+<li>The reporter's selected reason category (e.g. "Inappropriate content").</li>
+<li>Any optional free-text details the reporter provided.</li>
+<li>A per-device deduplication hash so the same device can only file one report per template — this hash is irreversible and cannot be used to identify the reporter or their account.</li>
+</ul>
+<p>What is <strong>NOT</strong> attached to a report: your VOROM user account, email, username, IP address, device identifier, or any other personal identifier. Reports are genuinely anonymous from the admin reviewer's perspective.</p>
+<p>Reports are reviewed by a human admin who decides whether the reported template violates the Terms of Service. If so, the admin records the template's <strong>content hash</strong> (a one-way SHA256 digest of the template's name + exercise list) in our `template_bans` registry. Every VOROM client checks this registry before showing the import preview — any template whose content matches a banned hash displays a "Template Removed" screen with the admin's reason and cannot be imported.</p>
+<p>The content hash does NOT reveal the template's name or exercises to anyone querying the ban registry — it is a one-way digest. Public read access to the ban registry exists solely so VOROM clients can check it before showing import previews.</p>
+<p><strong>Retention.</strong> Individual report records are retained for up to 12 months from submission, then automatically purged. The `template_bans` registry (content hashes + admin reasons) is retained indefinitely as a permanent abuse-prevention measure, since the same prohibited content can resurface in re-encoded form years later. Ban entries can be removed if the original block was issued in error.</p>
+<p>This reporting + blocking infrastructure exists to comply with App Store Guideline 1.2 (User-Generated Content) requirements for "timely responses" to reports of objectionable content shared between users. It does NOT mean VOROM hosts or distributes user templates — templates still travel only via the user's own messaging apps. See Terms of Service for full content guidelines and prohibited-content policy.</p>
+
 <p>This is distinct from any future server-hosted sharing features (a Discovery tab is planned for a later version), where templates would be hosted by VOROM and visible to other users. Those features will be covered by separate Privacy Policy provisions when launched.</p>
 
 <h2>Export</h2>
