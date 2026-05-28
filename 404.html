@@ -2,64 +2,220 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VOROM — Open in App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>VOROM Workout Plan — Open in app</title>
+  <meta name="description" content="A VOROM workout template was shared with you. Tap to open it in VOROM.">
+
+  <!-- Open Graph / iMessage / WhatsApp rich preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VOROM">
+  <meta property="og:title" content="VOROM Workout Plan">
+  <meta property="og:description" content="A workout template was shared with you. Tap to open it in VOROM.">
+  <meta property="og:image" content="https://vorom.app/logo.png">
+  <meta property="og:url" content="https://vorom.app/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="VOROM Workout Plan">
+  <meta name="twitter:description" content="A workout template was shared with you. Tap to open it in VOROM.">
+  <meta name="twitter:image" content="https://vorom.app/logo.png">
+
+  <!-- Apple Smart App Banner — surfaces "Open in VOROM" / "Get the app"
+       at the top of Safari when present. Once the App Store ID is
+       known, replace 0000000000 with the real numeric id. -->
+  <!-- <meta name="apple-itunes-app" content="app-id=0000000000"> -->
+
   <style>
+    :root {
+      color-scheme: light dark;
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: #f5f5f7;
       color: #1d1d1f;
       margin: 0;
-      padding: 40px 20px;
+      padding: 24px 16px;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
     }
+    @media (prefers-color-scheme: dark) {
+      body { background: #000; color: #f5f5f7; }
+      .card { background: #1c1c1e; box-shadow: 0 4px 18px rgba(0,0,0,0.5); }
+      .small { color: #8e8e93; }
+      .tip { background: #2c2c2e; color: #d1d1d6; }
+      .tip-title { color: #f5f5f7; }
+    }
     .card {
       background: #fff;
-      border-radius: 16px;
-      padding: 32px 28px;
+      border-radius: 18px;
+      padding: 36px 28px;
       max-width: 480px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      width: 100%;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
       text-align: center;
     }
-    h1 { font-size: 24px; margin: 0 0 12px; }
-    p { font-size: 15px; line-height: 1.5; color: #555; margin: 0 0 16px; }
+    .logo {
+      width: 84px;
+      height: 84px;
+      border-radius: 20px;
+      margin: 0 auto 18px;
+      display: block;
+      object-fit: cover;
+    }
+    h1 {
+      font-size: 26px;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 28px 0 12px;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #555;
+      margin: 0 0 16px;
+    }
+    @media (prefers-color-scheme: dark) {
+      p { color: #aeaeb2; }
+    }
     .btn {
       display: inline-block;
       background: #0a84ff;
       color: white !important;
       text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 24px;
+      padding: 14px 28px;
+      border-radius: 26px;
       font-weight: 600;
-      font-size: 15px;
-      margin-top: 8px;
+      font-size: 16px;
+      margin: 8px 0;
+      min-width: 240px;
     }
-    .small { font-size: 13px; color: #888; margin-top: 24px; }
+    .btn:active { background: #0070d8; }
+    .btn-secondary {
+      background: transparent;
+      color: #0a84ff !important;
+      border: 1.5px solid #0a84ff;
+    }
+    .btn-secondary:active { background: rgba(10,132,255,0.1); }
+    .store-row {
+      margin: 14px 0 4px;
+    }
+    .store-row a img {
+      height: 44px;
+    }
+    .tip {
+      background: #fff4d5;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 24px;
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: left;
+      color: #5c4400;
+    }
+    .tip-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #5c4400;
+      display: block;
+    }
+    .small { font-size: 13px; color: #8e8e93; margin-top: 20px; }
     .alt { color: #0a84ff; text-decoration: none; }
+    .hidden { display: none !important; }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>Open in VOROM</h1>
-    <p id="msg">If you have VOROM installed, this link should have opened the app. Tap below to install or open it.</p>
-    <a class="btn" href="https://apps.apple.com/app/vorom" id="store">Install VOROM</a>
-    <p class="small">VOROM is a workout-tracking app for iPhone &amp; Apple Watch. Template share links work only on devices with VOROM installed.</p>
-    <p class="small"><a class="alt" href="/">vorom.app home</a></p>
+    <img class="logo" src="/logo.png" alt="VOROM" onerror="this.style.display='none'">
+
+    <!-- Share-link state — shown when path matches /share/v1/* -->
+    <div id="share-state" class="hidden">
+      <h1>VOROM Workout Plan</h1>
+      <p>A workout template was shared with you. Open it in VOROM to import.</p>
+
+      <a id="open-app-btn" class="btn" href="#">Open in VOROM</a>
+
+      <h2>Don't have VOROM yet?</h2>
+      <div class="store-row">
+        <a href="https://apps.apple.com/app/vorom" id="appstore">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+      </div>
+      <p class="small">Android coming soon.</p>
+
+      <div class="tip">
+        <span class="tip-title">⚠️ Opening from Instagram or Facebook?</span>
+        These apps open links in their own browser, which can't switch to VOROM directly. Tap the <strong>•••</strong> menu in the corner and choose <strong>"Open in Safari"</strong> — then this page's button works.
+      </div>
+    </div>
+
+    <!-- Default state — shown for any other path -->
+    <div id="default-state">
+      <h1>Page not found</h1>
+      <p>The page you're looking for doesn't exist.</p>
+      <a class="btn" href="/">Go to vorom.app</a>
+    </div>
+
+    <p class="small"><a class="alt" href="/">vorom.app</a> · <a class="alt" href="/privacy.html">Privacy</a> · <a class="alt" href="/terms.html">Terms</a></p>
   </div>
+
   <script>
-    // If the URL path is /share/v1/<encoded>, attempt a deep link as a
-    // last-resort fallback. (Universal links open the app BEFORE this
-    // page loads if AASA is set up correctly — this script only runs
-    // when the user landed in the browser because the app isn't
-    // installed or AASA hasn't been re-fetched.)
-    var p = location.pathname;
-    if (p.indexOf("/share/v1/") === 0) {
-      document.getElementById("msg").textContent =
-        "This is a VOROM template-share link. Install VOROM to open it.";
-    }
+    (function () {
+      var path = window.location.pathname || "";
+      var SHARE_PREFIX = "/share/v1/";
+      if (path.indexOf(SHARE_PREFIX) !== 0) return;
+
+      var encoded = path.substring(SHARE_PREFIX.length);
+      if (!encoded) return;
+
+      // Show share-state, hide default-state.
+      document.getElementById("share-state").classList.remove("hidden");
+      document.getElementById("default-state").classList.add("hidden");
+
+      // Custom scheme URL escapes Instagram / Facebook in-app browsers
+      // where iOS Universal Links don't fire.
+      var customSchemeUrl = "vorom://share/v1/" + encoded;
+      var universalUrl = "https://vorom.app/share/v1/" + encoded;
+
+      var btn = document.getElementById("open-app-btn");
+      // The button tries CUSTOM SCHEME first (works in webviews), then
+      // falls back to the Universal Link after a short delay (handles
+      // the case where the user is in Safari and the app isn't
+      // installed — UL won't fire, falls through to App Store).
+      btn.setAttribute("href", customSchemeUrl);
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        // Set hash so we can detect "user came back" if app didn't open
+        var t0 = Date.now();
+        window.location.href = customSchemeUrl;
+        setTimeout(function () {
+          // If still on page after 1.5s, the custom scheme didn't fire.
+          // Try Universal Link as fallback.
+          if (Date.now() - t0 < 2500 && !document.hidden) {
+            window.location.href = universalUrl;
+          }
+        }, 1500);
+      });
+
+      // Auto-attempt on first load — for users who landed in
+      // Safari/Chrome with VOROM installed but UL didn't trigger
+      // (rare; AASA refresh edge case). Custom scheme jumps app
+      // immediately. If app not installed, custom scheme fails
+      // silently and the user sees the buttons.
+      var ua = navigator.userAgent;
+      var isIOS = /iPhone|iPad|iPod/.test(ua);
+      // Suppress auto-redirect inside in-app webviews — would loop
+      // through the failed Universal Link and back to here.
+      var isMetaWebview = /Instagram|FBAN|FBAV|FB_IAB/.test(ua);
+      if (isIOS && !isMetaWebview) {
+        setTimeout(function () { window.location.href = customSchemeUrl; }, 250);
+      }
+    })();
   </script>
 </body>
 </html>
