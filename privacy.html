@@ -42,7 +42,7 @@
   <img src="logo.png" alt="VOROM logo" style="width: 96px; height: auto;">
 </div>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: May 2026</p>
+<p class="updated">Last updated: June 2026</p>
 
 <div class="tldr">
   <strong>TL;DR:</strong> No ads. No trackers. No data resale. We do not use your data for marketing or advertising. You own your training history, and you can export 100% of it at any time — even on the free tier.
@@ -52,7 +52,7 @@
 <p>VOROM stores the data you create — workout logs, exercise catalog edits, body weight, training-mode settings, plates, and your account email. Nothing else.</p>
 
 <h2>Where your data lives</h2>
-<p>Local: your device's SwiftData store — holds your complete data regardless of tier. Cloud: Supabase managed PostgreSQL (US East — North Virginia, <code>us-east-1</code>) — stores a full backup of your data regardless of tier, so an upgrade or device change restores everything. Large files (HR samples, GPS routes, distance traces) live in Supabase Storage. Live multi-device synchronization (e.g., iPhone ↔ iPad ↔ second iPhone) requires a paid tier; the free tier still backs up to cloud but does not actively mirror new data across multiple signed-in devices in real time. All data is encrypted in transit (TLS) and at rest.</p>
+<p>Local: your device's SwiftData store — holds your complete data on this device, regardless of tier. Cloud: Supabase managed PostgreSQL (US East — North Virginia, <code>us-east-1</code>). Cloud Backup is a <strong>Pro feature</strong>: for Pro accounts with Cloud Backup enabled, we store a full backup of your training data (workouts, exercises, sets, templates, body weight, and large files such as HR samples, GPS routes and distance traces in Supabase Storage) so a device change or a second device restores everything. <strong>Free accounts operate in On-Device Only mode</strong> — your workouts, templates, exercises, HR and GPS data stay on this device and are not synced to the cloud. Account identity (username, email, tier and app settings) syncs for all users so you can sign in on a new device. Live multi-device synchronization (e.g., iPhone ↔ iPad ↔ second iPhone) requires a paid Pro subscription. All data is encrypted in transit (TLS) and at rest.</p>
 
 <h2>HealthKit</h2>
 <p>If you grant Health permission, VOROM reads heart rate, body weight, and (optionally) running power FROM Apple Health for use during workouts and in benchmarks. VOROM does NOT write workout data back to Apple Health unless you explicitly enable export. We do not use HealthKit data for marketing or advertising.</p>
@@ -63,7 +63,7 @@
 <h2>Third-party services (sub-processors)</h2>
 <p>VOROM uses the following external service providers to operate. We only share the minimum data each service needs to perform its function. Each provider has its own privacy policy that also applies to data they handle on your behalf.</p>
 <ul>
-<li><strong>Supabase</strong> — hosts your cloud database, authentication tokens, and large files in the US East (North Virginia) region. Receives all data you store in the app (when Cloud Backup is enabled).</li>
+<li><strong>Supabase</strong> — hosts your cloud database, authentication tokens, and large files in the US East (North Virginia) region. Receives your account identity and settings for all users, and your full training data only when Cloud Backup is enabled (a Pro feature; Free accounts are On-Device Only).</li>
 <li><strong>Apple Sign-In</strong> — authenticates you without ever revealing your password to us; we receive only your email (or relay email if you use "Hide My Email") and a stable identifier.</li>
 <li><strong>Google Sign-In</strong> — same authentication model as Apple. We do not see, receive, or store your Apple or Google account password.</li>
 <li><strong>Resend</strong> (primary transactional-email provider) — sends account-deletion confirmation and recovery emails. Receives only your email address and the email content (deletion scheduled / deletion confirmed).</li>
@@ -74,7 +74,7 @@
 <p>Your data is processed and stored in the United States (Supabase's <code>us-east-1</code> / North Virginia region). If you live in the European Economic Area, the United Kingdom, or another jurisdiction with data-protection laws, your data is transferred to the United States for the purposes described in this policy. We rely on Supabase's enterprise-grade infrastructure security and standard contractual safeguards to protect your data during this transfer.</p>
 
 <h2>Data retention</h2>
-<p>Your workout and account data is retained indefinitely for as long as your account is active, regardless of whether you are on the free tier or a paid tier. We do not delete free-tier data — this lets you upgrade later and immediately see your full history. If you delete your account, all your data is permanently removed after the 24-hour grace period (see Account deletion below). If your account is inactive for an extended period and we discontinue the service, we will email you before deleting any data.</p>
+<p>Your account identity (username, email, tier, settings) is retained for as long as your account is active, regardless of tier. Training data: for Pro accounts, cloud copies are retained indefinitely; for Free accounts your training data lives on-device only (any cloud copies uploaded during a previous Pro period are also retained indefinitely and are never auto-deleted on a tier change). We do not delete free-tier data — this lets you upgrade later and immediately see your full history. If you delete your account, all your data is permanently removed after the 24-hour grace period (see Account deletion below). If your account is inactive for an extended period and we discontinue the service, we will email you before deleting any data.</p>
 
 <h2>Account deletion</h2>
 <p>Settings → Account → Delete My Account soft-deletes every row across 8 tables for your user. A 24-hour grace period lets you recover by signing back in. After 24 hours, the data is permanently removed.</p>
