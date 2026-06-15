@@ -15,7 +15,11 @@
     text-align: center;
   }
   h1 { font-size: 2.5em; letter-spacing: 0.02em; margin-bottom: 0.25em; }
-  .tagline { color: #666; font-size: 1.1em; margin-bottom: 3em; }
+  .tagline { color: #666; font-size: 1.1em; margin-bottom: 2em; }
+  .hero-video {
+    display: block; width: 100%; border-radius: 18px; margin: 0 auto 2.75em;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.28); background: #06080f; border: 0;
+  }
   .links { display: flex; flex-direction: column; gap: 0.75em; align-items: center; }
   .links a {
     display: inline-block;
@@ -43,6 +47,10 @@
 <img src="logo.png" alt="VOROM logo" style="width: 120px; height: auto; margin-bottom: 1.5em;">
 <h1>VOROM</h1>
 <p class="tagline">Privacy-first, on-device strength + cardio training for iPhone and Apple Watch.</p>
+
+<video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="promo_poster.jpg" aria-label="VOROM app promo">
+  <source src="promo.mp4" type="video/mp4">
+</video>
 
 <div class="links">
   <a href="privacy.html">Privacy Policy</a>
