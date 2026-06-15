@@ -42,17 +42,17 @@
   <img src="logo.png" alt="VOROM logo" style="width: 96px; height: auto;">
 </div>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: June 2026</p>
+<p class="updated">Last updated: June 15, 2026</p>
 
 <div class="tldr">
-  <strong>TL;DR:</strong> No ads. No trackers. No data resale. We do not use your data for marketing or advertising. You own your training history, and you can export 100% of it at any time — even on the free tier.
+  <strong>TL;DR:</strong> VOROM is on-device only. No ads. No trackers. No VOROM account. No server upload. No data resale. Your workout history stays on your device unless you choose to export or share it.
 </div>
 
-<h2>What VOROM collects</h2>
-<p>VOROM stores the data you create — workout logs, exercise catalog edits, body weight, biological sex and birth year/month (used to calculate heart-rate zones and strength benchmarks), training-mode settings, plates, and your account email. Nothing else.</p>
+<h2>What VOROM stores locally</h2>
+<p>VOROM stores the data you create inside the app — workout logs, exercise catalog edits, body weight, biological sex and birth year/month (used to calculate heart-rate zones and strength benchmarks), training-mode settings, plates, custom images, and app settings. This data is stored locally on your device. VOROM does not operate an app account or server-sync system in the current local-only version.</p>
 
 <h2>Where your data lives</h2>
-<p>Local: your device's SwiftData store — holds your complete data on this device, regardless of tier. Cloud: Supabase managed PostgreSQL (US East — North Virginia, <code>us-east-1</code>). Cloud Backup is a <strong>Pro feature</strong>: for Pro accounts with Cloud Backup enabled, we store a full backup of your training data (workouts, exercises, sets, templates, body weight, biological sex and birth year/month, and large files such as HR samples, GPS routes and distance traces in Supabase Storage) so a device change or a second device restores everything. <strong>Free accounts operate in On-Device Only mode</strong> — your workouts, templates, exercises, HR and GPS data stay on this device and are not synced to the cloud. Account identity (username, email, tier and app settings) syncs for all users so you can sign in on a new device. Live multi-device synchronization (e.g., iPhone ↔ iPad ↔ second iPhone) requires a paid Pro subscription. All data is encrypted in transit (TLS) and at rest.</p>
+<p>Your complete VOROM training database lives in the app's local SwiftData store on your device. iPhone ↔ Apple Watch workout sync uses Apple's WatchConnectivity framework between your own devices. VOROM does not upload your workouts, templates, exercises, heart-rate samples, GPS routes, distance traces, body weight, or app settings to VOROM-operated servers in the current local-only version.</p>
 
 <h2>HealthKit</h2>
 <p>If you grant Health permission, VOROM reads heart rate, body weight, and (optionally) running power FROM Apple Health for use during workouts and in benchmarks. VOROM does NOT write workout data back to Apple Health unless you explicitly enable export. We do not use HealthKit data for marketing or advertising.</p>
@@ -60,24 +60,25 @@
 <h2>What is NOT collected</h2>
 <p>VOROM has no analytics, no ad SDKs, no tracking pixels. We do not sell, rent, or share your data with advertisers or marketers. The app does not request your contacts, calendar, photos, or microphone. We do not use any of your data for marketing or advertising.</p>
 
+<h2>App Store privacy label</h2>
+<p>For Apple's App Privacy label, the current local-only version is designed as <strong>Data Not Collected</strong>: VOROM does not transmit your workout data, HealthKit-derived data, GPS routes, body weight, notes, app settings, or purchase-entitlement status to VOROM-operated servers or third-party analytics/advertising services. StoreKit purchases, Apple Health, Apple device backups, and Apple Watch system connectivity are handled by Apple according to Apple's own policies and your device settings.</p>
+
 <h2>Third-party services (sub-processors)</h2>
-<p>VOROM uses the following external service providers to operate. We only share the minimum data each service needs to perform its function. Each provider has its own privacy policy that also applies to data they handle on your behalf.</p>
+<p>VOROM relies on Apple platform services. We do not use advertising SDKs, analytics SDKs, or a VOROM-operated backend in the current local-only version.</p>
 <ul>
-<li><strong>Supabase</strong> — hosts your cloud database, authentication tokens, and large files in the US East (North Virginia) region. Receives your account identity and settings for all users, and your full training data only when Cloud Backup is enabled (a Pro feature; Free accounts are On-Device Only).</li>
-<li><strong>Apple Sign-In</strong> — authenticates you without ever revealing your password to us; we receive only your email (or relay email if you use "Hide My Email") and a stable identifier.</li>
-<li><strong>Google Sign-In</strong> — same authentication model as Apple. We do not see, receive, or store your Apple or Google account password.</li>
-<li><strong>Resend</strong> (primary transactional-email provider) — sends account-deletion confirmation and recovery emails. Receives only your email address and the email content (deletion scheduled / deletion confirmed).</li>
-<li><strong>Brevo</strong> (failover transactional-email provider) — same role as Resend; used automatically when Resend is rate-limited or unavailable. Receives only your email address and email content.</li>
+<li><strong>Apple App Store / StoreKit</strong> — handles purchases, Lifetime licenses, subscriptions, cancellations, refunds, and purchase restoration. VOROM reads StoreKit entitlement status only to unlock paid features; we do not receive your payment card details.</li>
+<li><strong>Apple Health / HealthKit</strong> — if you grant permission, VOROM reads selected health and workout-related data from Apple Health for app features. You can change this permission in iOS Settings at any time.</li>
+<li><strong>Apple WatchConnectivity</strong> — transfers workout state between your iPhone and Apple Watch.</li>
 </ul>
 
 <h2>International data transfer</h2>
-<p>Your data is processed and stored in the United States (Supabase's <code>us-east-1</code> / North Virginia region). If you live in the European Economic Area, the United Kingdom, or another jurisdiction with data-protection laws, your data is transferred to the United States for the purposes described in this policy. We rely on Supabase's enterprise-grade infrastructure security and standard contractual safeguards to protect your data during this transfer.</p>
+<p>VOROM does not transfer your training database to VOROM-operated servers in the current local-only version. Apple may process App Store, StoreKit, HealthKit, and Apple Watch-related data according to Apple's own policies and your device settings.</p>
 
 <h2>Data retention</h2>
-<p>Your account identity (username, email, tier, settings) is retained for as long as your account is active, regardless of tier. Training data: for Pro accounts, cloud copies are retained indefinitely; for Free accounts your training data lives on-device only (any cloud copies uploaded during a previous Pro period are also retained indefinitely and are never auto-deleted on a tier change). We do not delete free-tier data — this lets you upgrade later and immediately see your full history. If you delete your account, all your data is permanently removed after the 24-hour grace period (see Account deletion below). When you delete an individual item (a workout, plan, folder, or exercise) rather than your whole account, we keep a soft-delete marker for up to 90 days so the deletion reliably propagates to all of your signed-in devices, after which the underlying records are permanently purged from our servers. We also keep a short internal change-log of destructive actions (deletions) and renames you make to your training data — recording the action, the affected record, the time, and your account identifier — which is automatically purged after 30 days and is permanently deleted when you delete your account. If your account is inactive for an extended period and we discontinue the service, we will email you before deleting any data.</p>
+<p>Training data remains on your device until you delete it, wipe the app's local data, or uninstall the app. VOROM does not keep a server-side copy for restore in the current local-only version. Apple may retain App Store purchase records according to Apple's terms and policies.</p>
 
-<h2>Account deletion</h2>
-<p>Settings → Account → Delete My Account soft-deletes every row across 8 tables for your user. A 24-hour grace period lets you recover by signing back in. After 24 hours, the data is permanently removed.</p>
+<h2>Deleting your data</h2>
+<p>Because there is no VOROM account or server-stored training database in the current local-only version, there is no server account to delete. You can delete workouts, plans, exercises, body-weight entries, and other local records inside the app. Deleting the app from your device removes the app's local data unless you previously exported it or your device backup preserves it.</p>
 
 <h2>Offline template sharing</h2>
 <p>When you share a template via VOROM's Offline Template Share feature:</p>
@@ -90,31 +91,16 @@
 </ul>
 
 <h2>Template reports and content blocks</h2>
-<p>When a recipient taps "Report this template" in the import preview, the following is sent <strong>anonymously</strong> to a private admin-only review queue (`template_reports`) on our Supabase backend:</p>
-<ul>
-<li>The full decoded template content (name, exercises, sets, notes).</li>
-<li>The reporter's selected reason category (e.g. "Inappropriate content").</li>
-<li>Any optional free-text details the reporter provided.</li>
-<li>A per-device deduplication hash so the same device can only file one report per template — this hash is irreversible and cannot be used to identify the reporter or their account.</li>
-</ul>
-<p>What is <strong>NOT</strong> attached to a report: your VOROM user account, email, username, IP address, device identifier, or any other personal identifier. Reports are genuinely anonymous from the admin reviewer's perspective.</p>
-<p>Reports are reviewed by a human admin who decides whether the reported template violates the Terms of Service. If so, the admin records the template's <strong>content hash</strong> (a one-way SHA256 digest of the template's name + exercise list) in our `template_bans` registry. Every VOROM client checks this registry before showing the import preview — any template whose content matches a banned hash displays a "Template Removed" screen with the admin's reason and cannot be imported.</p>
-<p>The content hash does NOT reveal the template's name or exercises to anyone querying the ban registry — it is a one-way digest. Public read access to the ban registry exists solely so VOROM clients can check it before showing import previews.</p>
-<p><strong>Retention.</strong> Individual report records are retained for up to 12 months from submission, then automatically purged. The `template_bans` registry (content hashes + admin reasons) is retained indefinitely as a permanent abuse-prevention measure, since the same prohibited content can resurface in re-encoded form years later. Ban entries can be removed if the original block was issued in error.</p>
-<p>This reporting + blocking infrastructure exists to comply with App Store Guideline 1.2 (User-Generated Content) requirements for "timely responses" to reports of objectionable content shared between users. It does NOT mean VOROM hosts or distributes user templates — templates still travel only via the user's own messaging apps. See Terms of Service for full content guidelines and prohibited-content policy.</p>
-
-<p>This is distinct from any future server-hosted sharing features (a Discovery tab is planned for a later version), where templates would be hosted by VOROM and visible to other users. Those features will be covered by separate Privacy Policy provisions when launched.</p>
+<p>The current local-only version does not send template reports or template content to a VOROM backend. If you receive an objectionable or infringing template link from someone else, contact the sender or the messaging service used to send it. You can also email <a href="mailto:support@vorom.app">support@vorom.app</a> with concerns, but VOROM may not be able to review or block content that exists only inside a private link we never received.</p>
 
 <h2>Export</h2>
-<p>Settings → Account → Export My Data generates a complete JSON + CSV snapshot of all your training data. The export always returns your <strong>full unrestricted</strong> history regardless of tier. You own your training history and we will never hold it hostage behind a paywall.</p>
-<p><strong>Free tier — Cloud Backup is off:</strong> as of 2026-05-25, Cloud Backup is a Pro-only feature. Free-tier accounts operate in <strong>On-Device Only</strong> mode — your workout history lives on this device. Your username, email, and tier still sync to our cloud for sign-in identity, but workouts / templates / exercises / HR / GPS data do not. We strongly recommend exporting periodically and saving the file to iCloud Drive, Files, or email so your training data survives outside the app (in case of phone loss, factory reset, or app deletion).</p>
-<p><strong>Pro → Free downgrade:</strong> if you previously subscribed to Pro, any data already uploaded during your Pro period is retained indefinitely in our cloud and remains restorable upon re-subscription. We never auto-delete training data on tier change. The only way to permanently remove your cloud data is Settings → Account → Delete My Account (24-hour grace period before permanent deletion).</p>
+<p>Settings → Data → Export My Data generates a JSON + CSV snapshot of your training data. The export always returns your <strong>full unrestricted</strong> history regardless of tier. Because the current app is local-only, we strongly recommend exporting periodically and saving the file somewhere outside the app, such as iCloud Drive, Files, AirDrop, or email.</p>
 
 <h2>Your rights (GDPR / CCPA / similar laws)</h2>
-<p>If you live in the European Economic Area, the United Kingdom, California, or any jurisdiction with similar data-protection laws, you have the right to: access your data, correct inaccurate data, port it to another service, erase it, restrict or object to its processing, and lodge a complaint with your local data-protection authority. VOROM's Export My Data feature gives you a full copy of your data on demand; the Delete My Account feature permanently erases it after a 24-hour grace period. These features satisfy the corresponding access, portability, and erasure rights under GDPR, the UK GDPR, and CCPA. For any other request — correction, restriction, objection, or questions — contact <a href="mailto:support@vorom.app">support@vorom.app</a> and we will respond within 30 days.</p>
+<p>If you live in the European Economic Area, the United Kingdom, California, or any jurisdiction with similar data-protection laws, you may have rights to access, correct, export, or erase personal data. VOROM's Export My Data feature gives you a copy of the local data stored by the app. Because the current version does not maintain a VOROM account or server database for your training history, most access and deletion actions happen directly on your device. For questions, contact <a href="mailto:support@vorom.app">support@vorom.app</a>.</p>
 
 <h2>Children</h2>
-<p>VOROM is not directed to children under 13 (under 16 in the European Economic Area and the United Kingdom). Sign-up requires Apple / Google / email authentication — those providers enforce their own age policies.</p>
+<p>VOROM is not directed to children under 13 (under 16 in the European Economic Area and the United Kingdom).</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the app will show a banner on next launch with a summary and link to the new version. Continued use means acceptance.</p>

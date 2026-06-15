@@ -55,7 +55,7 @@
   <img src="logo.png" alt="VOROM logo" style="width: 96px; height: auto;">
 </div>
 <h1>Terms of Service</h1>
-<p class="updated">Last updated: June 2026</p>
+<p class="updated">Last updated: June 15, 2026</p>
 
 <div class="medical-warning">
   <h2>⚠️ Medical Disclaimer</h2>
@@ -66,7 +66,7 @@
 <p>By installing and using VOROM you agree to these terms. You must be at least 13 years old to use VOROM — or at least 16 years old if you live in the European Economic Area or the United Kingdom. If you do not agree to these terms, you may not use the app and must delete it.</p>
 
 <h2>What VOROM provides</h2>
-<p>Tools for logging strength + cardio training, computing fitness benchmarks (e1RM, EF, HRR, etc.), and syncing data across your devices. VOROM is fitness software — not a medical device, not a coaching service, not professional training advice.</p>
+<p>Tools for logging strength + cardio training, computing fitness benchmarks (e1RM, EF, HRR, etc.), syncing workout state between your iPhone and Apple Watch, and exporting your training history. VOROM is fitness software — not a medical device, not a coaching service, not professional training advice.</p>
 
 <h2>Consult a physician</h2>
 <p>Before starting any new exercise program, or significantly increasing the intensity or volume of your training, consult a qualified physician — especially if you have a pre-existing medical condition, are pregnant, are recovering from injury, or are over 35 and have not exercised recently.</p>
@@ -87,13 +87,13 @@
 <p>You agree to defend, indemnify, and hold harmless VOROM and its developer from any claim, demand, loss, or damage (including reasonable legal fees) brought by a third party arising out of: your use or misuse of the app; your violation of these terms; your violation of any law or the rights of another person; or any content or data you submit through the app.</p>
 
 <h2>Acceptable use</h2>
-<p>You agree not to: (a) reverse-engineer, decompile, or attempt to extract the source code of the app; (b) bypass, disable, or interfere with security or rate-limit features; (c) scrape, harvest, or programmatically extract data from the app or our servers; (d) overload, attack, or attempt to disrupt the app or our servers; (e) use the app to violate any law or any third party's rights; (f) impersonate another person or share, sell, or transfer your account credentials; (g) use the app to generate or distribute spam, malware, or illegal content; (h) use the app in any safety-critical context such as medical diagnosis, emergency response, or operating heavy machinery. Violations may result in suspension or termination without notice.</p>
+<p>You agree not to: (a) reverse-engineer, decompile, or attempt to extract the source code of the app; (b) bypass, disable, or interfere with security or purchase-entitlement features; (c) use the app to violate any law or any third party's rights; (d) use the app to generate or distribute spam, malware, or illegal content; (e) use the app in any safety-critical context such as medical diagnosis, emergency response, or operating heavy machinery. Violations may result in loss of access to the app where permitted by law.</p>
 
-<h2>Account security</h2>
-<p>You are responsible for keeping your sign-in credentials (your Apple or Google account) confidential and for keeping your device secure. Anyone with access to your unlocked device or your authenticated session can read, modify, or delete your VOROM data. Notify the relevant provider (Apple, Google) immediately if you suspect unauthorized access. We are not liable for losses arising from compromised credentials, lost or stolen devices, or any access to your account that you did not personally authorize.</p>
+<h2>Device and Apple Account security</h2>
+<p>VOROM stores your training data locally. You are responsible for keeping your device secure. Anyone with access to your unlocked device can read, modify, export, or delete your VOROM data. Paid access is handled through the Apple Account used for App Store purchases; keep that Apple Account secure and contact Apple if you suspect unauthorized purchase activity.</p>
 
 <h2>Your content</h2>
-<p>Custom exercise names, notes, body weight entries, and other information you enter remain your property. By using the app you grant VOROM a limited, worldwide, non-exclusive license to store, process, transmit, and display this content solely to operate the app and sync it across your own devices. We do not share your content with other users. You agree not to enter content that is illegal, infringes a third party's rights, contains malware, or is obviously offensive. We may remove content or terminate accounts that violate this rule.</p>
+<p>Custom exercise names, notes, body weight entries, and other information you enter remain your property. VOROM stores and processes this content locally on your device to operate the app. When you export data or share an offline template link, you choose where that exported content goes. You agree not to use VOROM to create or share content that is illegal, infringes a third party's rights, contains malware, or is obviously offensive.</p>
 
 <h2>Offline template sharing</h2>
 <p>VOROM offers a feature ("Offline Template Share") allowing you to encode one of your workout templates as a private deep link and share that link with another person via your own messaging app (iMessage, WhatsApp, AirDrop, email, etc.).</p>
@@ -103,37 +103,31 @@
 <li>VOROM does <strong>NOT</strong> host, store, transmit, intercept, or distribute the template content. The template data is encoded directly into the URL itself and travels through your chosen messaging app to your chosen recipient(s). VOROM never receives a copy.</li>
 <li>VOROM acts solely as a serialization and import/decoding tool. It is not a publisher, distributor, or platform for the shared content.</li>
 <li>You may not share templates containing trademarked names (e.g. branded program names), copyrighted programs (e.g. paid third-party routines), or other third-party intellectual property without proper authorization from the rights holder.</li>
-<li><strong>Prohibited content.</strong> You agree NOT to share templates containing or referencing content that is: offensive, hateful, harassing, sexually explicit, defamatory, threatening, discriminatory, or otherwise objectionable; illegal under applicable laws; dangerous, abusive, or likely to cause serious physical harm (e.g. exercise routines designed to injure, training instructions targeting minors without parental supervision, content promoting eating disorders or self-harm); designed to deceive or scam recipients; containing malware, exploits, or other malicious payloads encoded as text. Templates exchanged in violation of this clause may result in your VOROM account being suspended or terminated without notice.</li>
-<li><strong>Report mechanism.</strong> Recipients may report any imported template via the in-app "Report this template" button (in the import preview sheet) or by emailing support@vorom.app. Reports are submitted anonymously (no user identity attached) and stored in a private admin-only review queue (`template_reports`) hosted on our Supabase backend. Reports include the template's content, the reporter's reason category, and any free-text details — they do NOT include the reporter's user account, IP address, or device identifier. Reports are retained for up to 12 months for trend analysis and Terms-of-Service enforcement, then automatically purged.</li>
-<li><strong>Content blocking.</strong> When a template is found to violate these Terms, an administrator may block it by recording its content hash in our `template_bans` registry. The hash is a one-way cryptographic digest of the template's name + exercise list — it does NOT reveal the template's contents to anyone querying the registry. Once a content hash is blocked, every VOROM client refuses to import any template whose content matches that hash (regardless of how the link was re-encoded or re-shared). Recipients attempting to import blocked content see a "Template Removed" message with a brief explanation. Blocked entries are retained indefinitely as a permanent abuse-prevention measure but can be removed if the original block was issued in error.</li>
+<li><strong>Prohibited content.</strong> You agree NOT to share templates containing or referencing content that is: offensive, hateful, harassing, sexually explicit, defamatory, threatening, discriminatory, or otherwise objectionable; illegal under applicable laws; dangerous, abusive, or likely to cause serious physical harm (e.g. exercise routines designed to injure, training instructions targeting minors without parental supervision, content promoting eating disorders or self-harm); designed to deceive or scam recipients; containing malware, exploits, or other malicious payloads encoded as text.</li>
 <li>You agree to indemnify and hold VOROM harmless from any claims, damages, or liability arising from content you share via this feature.</li>
 <li>Recipients are responsible for their own decision to import templates they receive. By importing, the recipient agrees to comply with these Terms.</li>
-<li>Because VOROM has no copy of templates shared via this feature (except as voluntarily submitted via the Report mechanism), we cannot proactively review, moderate, or take down content that has not been reported. Complaints concerning offline-shared templates not yet reported should be filed via the in-app Report button so we can record the content hash and add a ban entry if warranted. Copyright takedown requests should be addressed via our DMCA agent (Settings → Help → Copyright Complaints).</li>
+<li>Because VOROM has no copy of templates shared via this feature, we are technically unable to proactively review, moderate, or take down private template links. Complaints concerning offline-shared templates should be directed to the sender or the messaging service used to send them. Copyright concerns can also be sent to support@vorom.app, but VOROM may not be able to act on content we never received.</li>
 </ul>
 
 <h2>No advertising. No data resale.</h2>
-<p>VOROM does not show advertisements inside the app and never will. We do not sell, rent, share, or otherwise commercialize your workout data, body weight, heart-rate samples, GPS routes, account email, or any other personal information. Your data is used only to run the features you see — sync across your devices, compute benchmarks, render charts. That's it.</p>
+<p>VOROM does not show advertisements inside the app and never will. We do not sell, rent, share, or otherwise commercialize your workout data, body weight, heart-rate samples, GPS routes, or any other personal information. Your data is used only to run the features you see — workout logging, Apple Watch companion sync, benchmarks, charts, imports, and exports.</p>
 
 <h2>Data loss disclaimer</h2>
-<p>We make best-effort defenses (Supabase managed daily backups, point-in-time recovery, on-device persistence for every local write, in-app Diagnostics → Restore / Undo Sweep / Re-pull) but <strong>no software can guarantee 100% data integrity forever</strong>. Possible causes of cloud or local data loss include but are not limited to:</p>
+<p>VOROM writes your training data to local on-device storage, but <strong>no software can guarantee 100% data integrity forever</strong>. Possible causes of data loss include but are not limited to:</p>
 <ul>
-<li>A regional cloud-provider (Supabase, AWS) incident, outage, or shutdown.</li>
-<li>Permanent discontinuation of VOROM's cloud infrastructure if we cease operations.</li>
-<li>Account deletion accidentally confirmed past the 24-hour grace period.</li>
 <li>Hardware failure, loss, or theft of your device.</li>
 <li>OS-level data corruption, iOS upgrade failure, or factory reset.</li>
-<li>Force-quit during a migration, sync conflict, or background save.</li>
+<li>Deleting the app, wiping app data, or restoring a device backup that does not contain current VOROM data.</li>
+<li>Force-quit during a migration, import, export, or background save.</li>
 <li>A bug in VOROM itself, including bugs that go undetected for some time.</li>
-<li>Account-switch wipes triggered by signing into a different VOROM account on the same device.</li>
-<li>Apple In-App Purchase / Supabase Auth state desynchronization causing the app to fail to recognize your tier or account.</li>
 </ul>
-<p><strong>You acknowledge and agree that VOROM cannot accept liability for any data loss — partial or complete, cloud-side or device-side — arising from any cause, including ordinary negligence on our part.</strong> Cloud Backup (Pro feature) is provided on a "best effort" basis and does not constitute a guarantee. If your training data has long-term value to you, <strong>you are solely responsible</strong> for exporting it periodically (Settings → Account → Export My Data) and saving the file to a location outside the app (iCloud Drive, Files, email, another cloud service). VOROM is not a backup service.</p>
+<p><strong>You acknowledge and agree that VOROM cannot accept liability for any data loss arising from any cause, including ordinary negligence on our part.</strong> If your training data has long-term value to you, <strong>you are solely responsible</strong> for exporting it periodically (Settings → Data → Export My Data) and saving the file to a location outside the app (Files, iCloud Drive, email, AirDrop, or another storage service). VOROM is not a backup service.</p>
 
-<h2>Account, suspension &amp; termination</h2>
-<p>Your account is tied to the email of your sign-in provider. We may suspend or terminate your account at our sole discretion, with or without notice, for any reason — including but not limited to violation of these terms, suspected fraud or abuse, harm to other users, legal requirement, or our decision to stop providing the service. Termination does not affect rights that have already accrued. If you delete your own account, see the Privacy Policy for the 24-hour grace period. Sections that by their nature survive termination — liability, indemnification, intellectual property, governing law — continue to apply after your account ends.</p>
+<h2>No VOROM account</h2>
+<p>The current local-only version does not create a VOROM account or server-stored training database. Paid access is tied to the Apple Account used for App Store purchases, not to a VOROM email login. Sections that by their nature survive your use of the app — liability, indemnification, intellectual property, governing law — continue to apply after you stop using or delete the app.</p>
 
 <h2>Service availability</h2>
-<p>Cloud sync runs on Supabase managed infrastructure (currently single-region in US East — North Virginia, <code>us-east-1</code>). We aim for &gt;99% uptime but make no SLA. The app works offline; your data is safe locally even when cloud sync is unavailable.</p>
+<p>VOROM is designed to work offline for local logging. App Store purchases, purchase restoration, Apple Health access, and Apple Watch system connectivity depend on Apple services, your device settings, and your network connection. We do not provide an uptime SLA.</p>
 
 <h2>Updates</h2>
 <p>We push updates via the App Store. Some updates may change features, data formats, or the look of the app. Older versions may stop syncing if their data model is incompatible — keep the app current.</p>
@@ -168,7 +162,7 @@
 <p>VOROM may offer a one-time "VOROM Lifetime" purchase via Apple In-App Purchase.</p>
 <ul>
 <li><strong>Definition of Lifetime:</strong> a Lifetime purchase grants you access to Pro features for as long as VOROM remains actively developed, supported, and available in the App Store. "Lifetime" refers to the commercial lifespan of the VOROM application — not your natural lifetime.</li>
-<li><strong>Service discontinuation:</strong> we reserve the right to modify, suspend, or discontinue the app or its cloud services at any time. If VOROM ceases operations or shuts down its cloud infrastructure, your Lifetime license does not entitle you to a refund; your locally stored data on your device remains accessible.</li>
+<li><strong>Service discontinuation:</strong> we reserve the right to modify, suspend, or discontinue the app at any time. If VOROM ceases operations, your Lifetime license does not entitle you to a refund; your locally stored data on your device remains accessible as long as the installed app and operating system continue to support it.</li>
 <li><strong>Account binding:</strong> your Lifetime purchase is a non-consumable App Store transaction tied permanently to the Apple ID used at purchase. It cannot be transferred to a different Apple ID or to users on other platforms.</li>
 <li><strong>Future major versions:</strong> a Lifetime purchase applies to the current major version of VOROM. We reserve the right to release entirely new, separately branded applications or services in the future that may not be included in your original Lifetime purchase.</li>
 <li><strong>Refunds:</strong> as with subscriptions, all payments are processed by Apple. Refund requests must be made to Apple directly.</li>
@@ -177,15 +171,12 @@
 <h2>Free tier limits</h2>
 <p>The free tier of VOROM provides core workout-logging functionality without payment. Free-tier access is subject to the following limits, which may change for new users without notice.</p>
 <ul>
-<li><strong>Cloud Backup:</strong> Cloud sync of workouts, exercises, templates, and HR / GPS data is a Pro feature. Free-tier accounts operate in <strong>On-Device Only mode</strong> — your workout data stays on this device. Your username, email, and tier still sync to our cloud for sign-in identity, but your training history does not. To back up your training data, use Settings → Account → Export My Data, then save the file to iCloud Drive, Files, or email so it survives outside the app.</li>
 <li><strong>Historical view:</strong> all tiers see their <strong>complete unrestricted history</strong> in-app. No date cap on viewing. (Earlier versions of VOROM applied a 90-day cap on the free tier; that cap was removed 2026-05-25.)</li>
 <li><strong>Custom exercises:</strong> free-tier accounts can create up to 10 custom exercises beyond the built-in catalog.</li>
 <li><strong>Training Mode:</strong> Training Mode (Hypertrophy / Strength / Endurance / Deload / Run modes / Bike VO2Max) is a Pro feature.</li>
 <li><strong>Advanced cardio metrics:</strong> Efficiency Factor (EF) and Heart Rate Recovery (HRR) benchmarks are Pro features and are not displayed for free-tier accounts.</li>
-<li><strong>Pro → Free downgrade:</strong> if you previously subscribed to Pro and your subscription expires, your already-uploaded cloud data is <strong>retained indefinitely</strong>. We never auto-delete your training history. Re-subscribing restores cloud sync access — you pick up where you left off. The only way to permanently remove your cloud data is to use Settings → Account → Delete My Account.</li>
-<li><strong>Fair use:</strong> to keep VOROM sustainable for everyone, we reserve the right to impose reasonable fair-use limits on cloud storage and bandwidth across all tiers, including Lifetime accounts. If a single account consumes server resources far beyond typical use, we may restrict further cloud uploads while leaving your on-device data unaffected.</li>
 </ul>
-<p>To unlock Cloud Backup, unlimited custom exercises, Training Mode, and advanced cardio metrics, upgrade to VOROM Pro (subscription) or VOROM Lifetime.</p>
+<p>To unlock unlimited custom exercises, Training Mode, and advanced cardio metrics, upgrade to VOROM Pro (subscription) or VOROM Lifetime.</p>
 
 <h2>Severability &amp; entire agreement</h2>
 <p>If any part of these terms is held unenforceable, the rest still apply. These terms (together with the Privacy Policy) are the entire agreement between you and VOROM regarding the app; they supersede any prior agreement.</p>
@@ -196,7 +187,7 @@
 <h2>Contact</h2>
 <p>Email <a href="mailto:support@vorom.app">support@vorom.app</a>.</p>
 
-<p class="footer-id">VOROM is operated from Hong Kong. Cloud infrastructure: US East — North Virginia (<code>us-east-1</code>). For all inquiries: <a href="mailto:support@vorom.app">support@vorom.app</a>.</p>
+<p class="footer-id">VOROM is operated from Hong Kong. For all inquiries: <a href="mailto:support@vorom.app">support@vorom.app</a>.</p>
 
 <p class="nav"><a href="privacy.html">Privacy Policy</a> · <a href="index.html">VOROM</a></p>
 
