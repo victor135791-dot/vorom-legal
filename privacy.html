@@ -42,7 +42,7 @@
   <img src="logo.png" alt="VOROM logo" style="width: 96px; height: auto;">
 </div>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: August 7, 2026</p>
+<p class="updated">Last updated: September 15, 2026</p>
 
 <div class="tldr">
   <strong>TL;DR:</strong> Your workout and Health data stays on your device. VOROM uses RevenueCat only for anonymous purchase analytics and active-installation counts. No ads, cross-app tracking, VOROM account, training-data upload, or data resale.
@@ -56,6 +56,10 @@
 
 <h2>HealthKit</h2>
 <p>If you grant Health permission, VOROM reads heart rate, body weight, and (optionally) running power FROM Apple Health for use during workouts and in benchmarks. VOROM does NOT write workout data back to Apple Health unless you explicitly enable export. We do not use HealthKit data for marketing or advertising.</p>
+
+<h2>Apple Intelligence meal-photo analysis</h2>
+<p>If you choose to scan a meal photo, VOROM may use Apple's Foundation Models framework to estimate the food name, calories, and protein. Analysis runs on your device when an eligible on-device Apple Intelligence model is available. When VOROM uses Apple's Private Cloud Compute model for additional reasoning, the meal photo and the prompt information needed for that request are sent securely to Apple Private Cloud Compute solely to produce the requested estimate.</p>
+<p>Apple states that data sent to and returned by Private Cloud Compute is not stored, is not made accessible to Apple, and is used only to fulfill the request. VOROM does not send meal photos to VOROM-operated servers, does not retain a server-side copy, and does not use meal photos for advertising, marketing, tracking, or model training. You control whether to initiate a scan. Generated nutrition values are approximate, remain editable, and are not saved until you review and confirm them.</p>
 
 <h2>Limited anonymous purchase analytics</h2>
 <p>VOROM uses RevenueCat to measure active app installations and analyze purchases. RevenueCat receives an anonymous app identifier, purchase history, last app activity, and basic app/platform information. The identifier is not connected to a VOROM account, name, or email address.</p>
@@ -71,10 +75,11 @@
 <li><strong>Apple App Store / StoreKit</strong> — handles purchases, Lifetime licenses, subscriptions, cancellations, refunds, and purchase restoration. VOROM reads StoreKit entitlement status only to unlock paid features; we do not receive your payment card details.</li>
 <li><strong>Apple Health / HealthKit</strong> — if you grant permission, VOROM reads selected health and workout-related data from Apple Health for app features. You can change this permission in iOS Settings at any time.</li>
 <li><strong>Apple WatchConnectivity</strong> — transfers workout state between your iPhone and Apple Watch.</li>
+<li><strong>Apple Intelligence / Foundation Models / Private Cloud Compute</strong> — when you initiate meal-photo analysis on a supported device, Apple Intelligence processes the photo on-device or through Private Cloud Compute to return the requested estimate. Private Cloud Compute request content is not retained or made accessible to Apple. VOROM does not receive or retain a server-side copy.</li>
 </ul>
 
 <h2>International data transfer</h2>
-<p>VOROM does not transfer your training database to VOROM-operated servers. RevenueCat may process anonymous purchase and app-activity information in countries where it operates. Apple may process App Store, StoreKit, HealthKit, and Apple Watch-related data according to Apple's own policies and your device settings.</p>
+<p>VOROM does not transfer your training database to VOROM-operated servers. RevenueCat may process anonymous purchase and app-activity information in countries where it operates. When you initiate a meal-photo scan that uses Private Cloud Compute, Apple may process the request on Apple silicon servers under its Private Cloud Compute privacy protections. Apple may also process App Store, StoreKit, HealthKit, and Apple Watch-related data according to Apple's own policies and your device settings.</p>
 
 <h2>Data retention</h2>
 <p>Training data remains on your device until you delete it, wipe the app's local data, or uninstall the app. VOROM does not keep a server-side training database for restore. RevenueCat retains anonymous purchase and app-activity records according to its privacy and retention policies. Apple may retain App Store purchase records according to Apple's terms and policies.</p>
