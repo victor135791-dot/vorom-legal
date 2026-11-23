@@ -42,17 +42,18 @@
   <img src="logo.png" alt="VOROM logo" style="width: 96px; height: auto;">
 </div>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: September 15, 2026</p>
+<p class="updated">Last updated: November 23, 2026</p>
 
 <div class="tldr">
-  <strong>TL;DR:</strong> Your workout and Health data stays on your device. VOROM uses RevenueCat only for anonymous purchase analytics and active-installation counts. No ads, cross-app tracking, VOROM account, training-data upload, or data resale.
+  <strong>TL;DR:</strong> Your workout and Health data stays on your device (and optionally in your own private iCloud account if you turn on iCloud Backup). VOROM cannot access your iCloud backup and uses RevenueCat only for anonymous purchase analytics and active-installation counts. No ads, cross-app tracking, VOROM account, VOROM-server upload, or data resale.
 </div>
 
 <h2>What VOROM stores locally</h2>
-<p>VOROM stores the data you create inside the app — workout logs, exercise catalog edits, body weight, biological sex and birth year/month (used to calculate heart-rate zones and strength benchmarks), training-mode settings, plates, custom images, and app settings. This data is stored locally on your device. VOROM does not operate an app account or server-sync system.</p>
+<p>VOROM stores the data you create inside the app — workout logs, exercise catalog edits, body weight, biological sex and birth year/month (used to calculate heart-rate zones and strength benchmarks), training-mode settings, plates, custom images, and app settings. This data is stored locally on your device. VOROM does not operate an app account or VOROM-hosted server-sync system.</p>
 
-<h2>Where your data lives</h2>
+<h2>Where your data lives &amp; optional iCloud Backup</h2>
 <p>Your complete VOROM training database lives in the app's local SwiftData store on your device. iPhone ↔ Apple Watch workout sync uses Apple's WatchConnectivity framework between your own devices. VOROM does not upload your workouts, templates, exercises, heart-rate samples, GPS routes, distance traces, body weight, or app settings to VOROM-operated servers.</p>
+<p>If you choose to enable <strong>iCloud Auto-Backup</strong> in Settings → Data (off by default) or trigger a manual backup, VOROM stores a compressed snapshot of your gym plans, folders, custom exercises, app preferences, native workout history, and manual nutrition logs in your personal <strong>Apple iCloud Private Database (CloudKit)</strong>. This backup lives strictly inside your own Apple Account's private iCloud storage and is not accessible to VOROM. Apple Health–sourced data (such as imported Apple Fitness workouts, HealthKit heart-rate samples, HealthKit body composition/nutrition imports, and Recovery, Stress, and Strain scores) is excluded from iCloud Backup and recalculated from Apple Health on restore.</p>
 
 <h2>HealthKit</h2>
 <p>If you grant Health permission, VOROM reads heart rate, body weight, and (optionally) running power FROM Apple Health for use during workouts and in benchmarks. VOROM does NOT write workout data back to Apple Health unless you explicitly enable export. We do not use HealthKit data for marketing or advertising.</p>
@@ -66,13 +67,14 @@
 <p>VOROM does not send RevenueCat your workout data, HealthKit data, body weight, GPS routes, distance traces, notes, photos, contacts, calendar, or advertising identifiers. We do not sell or rent data, and we do not use this information for advertising or cross-app tracking.</p>
 
 <h2>App Store privacy label</h2>
-<p>For Apple's App Privacy label, VOROM discloses <strong>Purchase History</strong> for Analytics and App Functionality. Because RevenueCat uses an anonymous identifier that is not connected to a VOROM account or contact information, the information is not linked to your identity and is not used for tracking. Workout, HealthKit, location, body-weight, and other training data stays on your device.</p>
+<p>For Apple's App Privacy label, VOROM discloses <strong>Purchase History</strong> for Analytics and App Functionality. Because RevenueCat uses an anonymous identifier that is not connected to a VOROM account or contact information, the information is not linked to your identity and is not used for tracking. Optional iCloud Backup writes only to your own private Apple iCloud container, which VOROM cannot access. Workout, HealthKit, location, body-weight, and other training data is never collected by VOROM.</p>
 
 <h2>Third-party services (sub-processors)</h2>
 <p>VOROM does not use advertising SDKs or cross-app tracking.</p>
 <ul>
 <li><strong>RevenueCat</strong> — receives anonymous purchase history and app-activity information to provide purchase analytics, active-user statistics, and receipt validation. VOROM does not provide RevenueCat with workout, HealthKit, location, body-weight, name, email, or advertising-identifier data. See <a href="https://www.revenuecat.com/privacy/">RevenueCat's privacy policy</a>.</li>
 <li><strong>Apple App Store / StoreKit</strong> — handles purchases, Lifetime licenses, subscriptions, cancellations, refunds, and purchase restoration. VOROM reads StoreKit entitlement status only to unlock paid features; we do not receive your payment card details.</li>
+<li><strong>Apple iCloud / CloudKit (Private Database)</strong> — if you opt in to iCloud Backup in Settings → Data, Apple stores your encrypted backup snapshot inside your own private iCloud account under Apple's iCloud privacy protections. VOROM cannot view, query, or access your private iCloud backup.</li>
 <li><strong>Apple Health / HealthKit</strong> — if you grant permission, VOROM reads selected health and workout-related data from Apple Health for app features. You can change this permission in iOS Settings at any time.</li>
 <li><strong>Apple WatchConnectivity</strong> — transfers workout state between your iPhone and Apple Watch.</li>
 <li><strong>Apple Intelligence / Foundation Models / Private Cloud Compute</strong> — when you initiate meal-photo analysis on a supported device, Apple Intelligence processes the photo on-device or through Private Cloud Compute to return the requested estimate. Private Cloud Compute request content is not retained or made accessible to Apple. VOROM does not receive or retain a server-side copy.</li>
